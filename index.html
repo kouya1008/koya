@@ -4,7 +4,7 @@
  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <link rel="stylesheet" type="text/css" href="Stest1.css">
  <title>マルチチャット【ビデオ&テキスト】</title>
- <script src="http://192.168.11.46:3002/socket.io/socket.io.js"></script>
+ <script src="http://IPv4アドレス:3002/socket.io/socket.io.js"></script>
  <script>
    function _assert(desc, v) {
      if (v) {
@@ -39,7 +39,7 @@
 <div id="msg"></div>
 <script>
 //イベントとコールバックの定義
-var socket2 = io.connect("http://192.168.11.46:8080");
+var socket2 = io.connect("http://IPv4アドレス:8080");
 
 socket2.on("connected", function(name){});
 socket2.on("publish", function(data){ addMessage(data.value);});
@@ -72,17 +72,6 @@ function addMessage(msg){
 }
 </script>
 </div>
-  <!--
-  <link rel="stylesheet" type="text/css" href="example.css">
-  <p>SDP to send:<br />
-    <textarea id="text_for_send_sdp" rows="5" cols="60" readonly="readonly">SDP to send</textarea>
-  </p>
-  <p>SDP received:&nbsp;
-    <button type="button" onclick="onSdpText();">Receive remote SDP</button>
-    <br />
-    <textarea id="text_for_receive_sdp" rows="5" cols="60"></textarea>
-  </p>
-  -->
 </body>
 <script type="text/javascript">
   let localVideo = document.getElementById('local_video');
@@ -107,7 +96,7 @@ function addMessage(msg){
 
   // ----- use socket.io ---
   let port = 3002;
-  let socket = io.connect('http://192.168.11.46:' + port + '/');
+  let socket = io.connect('http://IPv4アドレス:' + port + '/');
   let room = getRoomName();
   socket.on('connect', function(evt) {
     console.log('socket.io connected. enter room=' + room );
